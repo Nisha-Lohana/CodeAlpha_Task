@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>General Calculator</title>
+</head>
+<body style=" justify-content: center; align-items: center; height: 100vh;  background-color: #f4f4f4;">
+  <div style="background: #fff; width: 300px; border-radius: 10px; margin-left: 450px;">
+    <div style="background: #000; color: #fff; text-align: center; padding: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+      <h2 style="margin: 0; font-size: 18px;">General Calculator</h2>
+    </div>
+    <div style="padding: 10px; border-bottom: 1px solid #ccc;">
+      <input type="text" id="display" style="width: 100%; font-size: 20px; border: none; outline: none; text-align: right; padding: 4px;" readonly />
+    </div>
+    <div style="width: 250px; margin: auto; padding: 10px;">
+         <button onclick="clearDisplay()" style="margin-left: 2px; width: 55px;height: 60px; font-size: 18px; border: none; border-radius: 5px; background: #eee;">C</button>
+          <button onclick="cross('x')" style="margin-left: 2px;width: 55px;height: 60px; font-size: 18px; border: none; border-radius: 5px; background: #eee;">x</button>
+          <button onclick="Value(')')" style="margin-left: 2px;width: 55px;height: 60px;  font-size: 18px; border: none; border-radius: 5px; background: #eee;">)</button>
+          <button onclick="Value('%')" style="margin-left: 2px;width: 55px;height: 60px;  font-size: 18px; border: none; border-radius: 5px; background: #eee;">%</button>  
+          <button onclick="Value('7')" style="margin-left: 2px;width: 55px;height: 60px;margin-top: 10px;  font-size: 18px; border: none; border-radius: 5px; background: #eee;">7</button>
+          <button onclick="Value('8')" style="margin-left: 2px;width: 55px;height: 60px;  font-size: 18px; border: none; border-radius: 5px; background: #eee;">8</button>
+          <button onclick="Value('9')" style="margin-left: 2px;width: 55px;height: 60px;  font-size: 18px; border: none; border-radius: 5px; background: #eee;">9</button>
+          <button onclick="Value('/')" style="margin-left: 2px;width: 55px;height: 60px; font-size: 18px; border: none; border-radius: 5px; background: #eee;">÷</button>
+          <button onclick="Value('4')" style="margin-left: 2px; width: 55px;height: 60px; font-size: 18px; border: none; border-radius: 5px; background: #eee;">4</button>
+          <button onclick="Value('5')" style="margin-left: 2px;width: 55px;height: 60px; margin-top: 10px;font-size: 18px;  border: none; border-radius: 5px; background: #eee;">5</button>
+          <button onclick="Value('6')" style="margin-left: 2px;width: 55px;height: 60px; font-size: 18px; border: none; border-radius: 5px; background: #eee;">6</button>
+          <button onclick="Value('*')" style="margin-left: 2px;width: 55px;height: 60px; font-size: 18px;  border: none; border-radius: 5px; background: #eee;">×</button>
+          <button onclick="Value('1')" style="margin-left: 2px; width: 55px;height: 60px; font-size: 18px;border: none; border-radius: 5px; background: #eee;">1</button>
+          <button onclick="Value('2')" style="margin-left: 2px;width: 55px;height: 60px; font-size: 18px; border: none; border-radius: 5px; background: #eee;">2</button>
+          <button onclick="Value('3')" style="margin-left: 2px;width: 55px;height: 60px; margin-top: 10px;font-size: 18px; border: none; border-radius: 5px; background: #eee;">3</button>
+          <button onclick="Value('-')" style="margin-left: 2px;width: 55px;height: 60px;margin-top: 10px; font-size: 18px; border: none; border-radius: 5px; background: #eee;">-</button>
+          <button onclick="calculateResult()" style="margin-left: 2px; width: 55px;height: 60px; margin-top: 10px;font-size: 18px;padding: 15px; font-size: 16px; border: none; border-radius: 5px; background: #007BFF; color: white;">=</button>
+          <button onclick="Value('0')" style="margin-left: 2px;width: 55px;height: 60px;margin-top: 10px; font-size: 18px; border: none; border-radius: 5px; background: #eee;">0</button>
+          <button onclick="Value('.')" style="margin-left: 2px;width: 55px;height: 60px;margin-top: 10px; font-size: 18px;  border: none; border-radius: 5px; background: #eee;">.</button>
+          <button onclick="Value('+')" style="margin-left: 2px;width: 55px;height: 60px;margin-top: 10px; font-size: 18px;  border: none; border-radius: 5px; background: #eee;">+</button>   
+      </div>
+  </div>
+
+  <script>
+
+    var res=document.getElementById('display');
+    function Value(show) {
+     res.value += show;
+    }
+
+    function clearDisplay() {
+      res.value = "";
+    }
+    function calculateResult(){
+      try{
+      res.value = eval(res.value);
+      }catch{
+        res.value="Error";
+      }
+    }
+    function cross() {
+      res.value = res.value.slice(0 , -1);
+    }
+
+  </script>
+</body>
+</html>
